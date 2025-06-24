@@ -298,7 +298,6 @@ double calculateTotal() {
       }
       cout << "\nTotal Biaya: " << grandTotal << endl;
   }
-
   
   int main() {
       addCourse();
