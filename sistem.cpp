@@ -70,4 +70,30 @@
       displayCourses();
       return 0;
   }
+
+  void registerStudent() {
+      string packageName;
+      int qty;
+      cout << "\nMasukkan nama paket kursus: ";
+      cin.ignore();
+      getline(cin, packageName);
+      cout << "Masukkan jumlah siswa yang mendaftar: ";
+      cin >> qty;
+      
+      for (auto& course : courses) {
+          if (course.package_name == packageName) {
+              course.registered_students += qty;
+              cout << "Pendaftaran berhasil! " << qty << " siswa terdaftar untuk " << packageName << ".\n";
+              return;
+          }
+      }
+      cout << "Paket kursus tidak ditemukan!\n";
+  }
+
+  int main() {
+      addCourse();
+      displayCourses();
+      registerStudent();
+      return 0;
+  }
   
